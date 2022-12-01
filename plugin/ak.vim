@@ -1,5 +1,6 @@
 " NOTE: You must, of course, install ak1 / the_silver_searcher
 "command! -bang -nargs=* -complete=file Ksearch call ak1#GtagsAck('ak1<bang>',<q-args>)
+runtime autoload/tagstackhelper.vim
 
 
 
@@ -16,8 +17,8 @@
 
 function! GtagsAckSearch()
 	let l:input = input("ACKSEARCH-PATTERN:", "")
-	if(l:input == '') 
-		return 
+	if(l:input == '')
+		return
 	endif
 	"echoerr "[".l:input. "]"
     "Rashmi
@@ -37,5 +38,6 @@ endif
  " :call GtagsAutoComplete_subg() <CR>"
 exec "noremap  ". g:gtags_cmd_open_ak_search ." :call GtagsAckSearch() <CR>"
 exec "inoremap ". g:gtags_cmd_open_ak_search ." <ESC>:call GtagsAckSearch() <CR>"
+runtime autoload/tagstackcolor.vim
 
 
